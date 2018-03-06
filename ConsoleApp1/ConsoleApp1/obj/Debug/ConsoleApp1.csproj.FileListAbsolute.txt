@@ -13,3 +13,16 @@
 \\cscinfo.com\dfs\homes\logan\mcampbe2\my documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
 \\cscinfo.com\dfs\homes\logan\mcampbe2\my documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 \\cscinfo.com\dfs\homes\logan\mcampbe2\my documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\bin\Debug\Selenium.WebDriverBackedSelenium.pdb
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\bin\Debug\Selenium.WebDriverBackedSelenium.xml
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\bin\Debug\WebDriver.pdb
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\bin\Debug\WebDriver.xml
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\bin\Debug\WebDriver.Support.pdb
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\bin\Debug\WebDriver.Support.xml
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

@@ -21,6 +21,7 @@ namespace ConsoleApp1
                 Dictionary<string, string> emissaries = GetEmissaries(webDriver);
                 List<string> affixes = GetAffixes(webDriver);
                 Dictionary<string, string> buildings = GetBuildings(webDriver);
+                string wowToken = GetWowToken(webDriver);
             }
             finally
             {
@@ -38,6 +39,14 @@ namespace ConsoleApp1
             return driver;
         }
 
+        private static string GetWowToken(ChromeDriver webdriver)
+        {
+            Console.WriteLine("\nWoW Token:");
+            string tokenValue = webdriver.FindElementByClassName("moneygold").Text.ToString();
+            Console.WriteLine(tokenValue);
+            return tokenValue;
+        }
+
         private static Dictionary<string, string> GetBuildings(ChromeDriver webDriver)
         {
             Dictionary<string, string> buildingDictionary = new Dictionary<string, string>();
@@ -45,7 +54,7 @@ namespace ConsoleApp1
             var progressElements = webDriver.FindElementsByXPath("//div[@class='tiw-region tiw-region-US tiw-show']//tr[@class='tiw-bs-building']//div[@class='tiw-bs-status-progress tiw-bs-status-progress-far' or @class='tiw-bs-status-progress']//span");
             var status = webDriver.FindElementsByXPath("//div[@class='tiw-region tiw-region-US tiw-show']//tr[@class='tiw-bs-building']//div[@class='imitation-heading heading-size-5']");
 
-            Console.WriteLine("Legionfall Buildings:");
+            Console.WriteLine("\nLegionfall Buildings:");
             for(int i = 0; i < buildingElements.Count; i++)
             {
                 buildingDictionary.Add(buildingElements[i].Text, $"{progressElements[i].Text} {status[i].Text}" );
@@ -63,8 +72,11 @@ namespace ConsoleApp1
             Console.WriteLine("\nAffixes:");
             foreach (IWebElement element in affixElements)
             {
-                affixList.Add(element.Text);
-                Console.WriteLine(element.Text);
+                if (!String.IsNullOrEmpty(element.Text.Trim()))
+                {
+                    affixList.Add(element.Text.Trim());
+                    Console.WriteLine(element.Text.Trim());
+                }
             }
 
             return affixList;
