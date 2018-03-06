@@ -26,3 +26,4 @@ C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\obj\Debug\Consol
 C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
 C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\mcampbe2\Source\Repos\Just4Fun\ConsoleApp1\ConsoleApp1\bin\Debug\ChromeDriver\chromedriver.exe

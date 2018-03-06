@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,7 +34,7 @@ namespace ConsoleApp1
 
         private static ChromeDriver InitializeChromeDriver()
         {
-            ChromeDriver driver = new ChromeDriver(@"C:\");
+            ChromeDriver driver = new ChromeDriver(Directory.GetCurrentDirectory() + @"\ChromeDriver");
             driver.Url = ("http://www.wowhead.com");
 
             return driver;
