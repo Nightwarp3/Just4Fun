@@ -23,12 +23,65 @@ namespace ConsoleApp1
                 List<string> affixes = GetAffixes(webDriver);
                 Dictionary<string, string> buildings = GetBuildings(webDriver);
                 string wowToken = GetWowToken(webDriver);
+                List<WorldQuest> worldQuests = GetWorldQuests(webDriver);
+
+                Console.WriteLine($"\nWorld Quest Test:\n  Name - {worldQuests[2].name}\n  Faction - {worldQuests[2].faction}\n  Ends - {worldQuests[2].timeLeft}\n  Zone - {worldQuests[2].zone}");
+                foreach(string reward in worldQuests[2].rewards)
+                {
+                    Console.WriteLine($"\n  Reward(s) - {reward}");
+                }
             }
             finally
             {
                 Console.WriteLine("\n\n\nPress enter to exit . . ");
                 Console.ReadLine();
                 webDriver.Quit();
+            }
+        }
+
+        private static List<WorldQuest> GetWorldQuests(ChromeDriver webDriver)
+        {
+            List<WorldQuest> wqList = new List<WorldQuest>();
+
+            webDriver.Url = "http://www.wowhead.com/world-quests/na";
+
+            foreach(var element in webDriver.FindElementsByXPath("//tbody[@class='clickable']/tr[td[5]/div != '']"))
+            {
+                WorldQuest wq = new WorldQuest();
+
+                foreach (var reward in element.FindElements(By.XPath("./td[2]//a[. != '']")))
+                {
+                    wq.rewards.Add(reward.Text);
+                }
+                if(IsElementPresent(element))
+                {
+                    wq.faction += element.FindElement(By.XPath("./td[3]//a")).Text;
+                }
+                wq.name += element.FindElement(By.XPath("./td[1]//a")).Text;
+                wq.timeLeft += element.FindElement(By.XPath("./td[4]/div")).Text;
+                wq.zone += element.FindElement(By.XPath("./td[5]//a")).Text;
+
+                wqList.Add(wq);
+                // will need to remove this at some point... for now just using to test.
+                if(wqList.Count > 3)
+                {
+                    break;
+                }
+            }
+
+            return wqList;
+        }
+
+        private static bool IsElementPresent(IWebElement webElement)
+        {
+            try
+            {
+                webElement.FindElement(By.XPath("./td[3]//a"));
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 
