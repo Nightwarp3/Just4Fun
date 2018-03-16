@@ -1,4 +1,3 @@
-import LogsAPIRequests as lr
+import LogsAPIRequests as la
 
-if __name__ == "__main__":
-    print(lr.getUsersReports('nightwarp3'))
+if __name__ == '__main__':

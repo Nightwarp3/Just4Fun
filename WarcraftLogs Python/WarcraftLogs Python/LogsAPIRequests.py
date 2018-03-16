@@ -3,38 +3,49 @@ import json, requests
 # Warcraft Logs Public API Key
 # d61ae7109219494d4b032246eec72339
 params = { 'api_key': 'd61ae7109219494d4b032246eec72339' }
-baseUrl = 'https://www.warcraftlogs.com:443/v1'
+base_url = 'https://www.warcraftlogs.com:443/v1'
 
-def getLogRankingsByID(encounterID):
+def getLogRankingsByID(encounter_id):
     # Gathers the rankings by Encounter ID (found by calling getEncounterIDs())
-    url = baseUrl + '/rankings/encounter/' + encounterID
+    url = base_url + '/rankings/encounter/' + encounter_id
     response = requests.post(url, params=params)
 
     return response.json()
 
-def getCharacterRanking(charName, serverName, region):
+def getCharacterRanking(char_name, server_name, region):
     # Gathers the rankings for specified character
-    url = baseUrl + '/rankings/character/' + charName + '/' + serverName + '/' + region
+    url = base_url + '/rankings/character/' + char_name + '/' + server_name + '/' + region
     response = requests.post(url, params=params)
 
     return response.json()
 
 def getEncounterIDs():
     # Gathers the Encounters and their associated IDs
-    response = requests.post(baseUrl + '/zones', params=params)
+    response = requests.post(base_url + '/zones', params=params)
     
     return response.json()
 
-def getCharacterParses(charname, serverName, region):
+def getCharacterParses(char_name, server_name, region):
     # Gathers the parses for the specified character
-    url = baseUrl + '/parses/character/' + charName + '/' + serverName + '/' + region
+    url = base_url + '/parses/character/' + char_name + '/' + server_name + '/' + region
     response = requests.post(url, params=params)
 
-def getGuildReports(guildName, serverName, region):
+    return response.json()
+
+def getGuildReports(guild_name, server_name, region):
     # Gathers the uploaded reports by Guild
-    url = baseUrl + '/reports/guild/' + guildName + '/' + serverName + '/' + region
+    valid_guild = parseParameters(guild_name)
+    url = base_url + '/reports/guild/' + valid_guild + '/' + server_name + '/' + region
     response = requests.post(url, params=params)
 
-def getUsersReports(userName):
-    url = baseUrl + '/reports/user/' + userName
+    return response.json()
+
+def getUsersReports(user_name):
+    url = base_url + '/reports/user/' + user_name
     response = requests.post(url, params=params)
+
+    return response.json()
+
+def parseParameters(param):
+    parsed_value = param.replace(' ', '%20')
+    return parsed_value
